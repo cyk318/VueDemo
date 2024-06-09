@@ -5,11 +5,6 @@ const router = createRouter({
         {
             name: '首页',
             component: () => import('../pages/Home.vue')
-        },
-        {
-            name: '其他',
-            path: '/about',
-            component: () => import('../pages/About.vue')
         }
     ],
     history: createWebHistory()
