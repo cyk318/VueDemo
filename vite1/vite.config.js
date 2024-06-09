@@ -1,7 +1,9 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+//1.引入 "按需引入" 插件
+import Components from 'unplugin-vue-components/vite'
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()],
+  //2.配置插件
+  plugins: [vue(), Components()],
 })
