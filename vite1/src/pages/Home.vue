@@ -2,7 +2,7 @@
   <div>计数器</div>
   <el-button @click="countInc">{{ count }}</el-button>
 
-  <Children :count="count"></Children>
+  <Children @countIncr="countInc" :count="count"></Children>
 </template>
 
 <script setup>
