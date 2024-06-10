@@ -1,21 +1,15 @@
 <template>
-  <div>父组件传入的数据: {{count}}</div>
-  <n-button @click="incr">{{count}}</n-button>
+  <n-button @click="childrenIncr">点我 +1: {{num}}</n-button>
 
 </template>
 
 <script setup>
-  defineProps({
-    count: {
-      type: Number,
-      default: NaN
-    }
-  })
-
-  const emit = defineEmits(['countIncr'])
-  const incr = () => {
-    //emit(父组件中的自定义方法, 参数1, 参数2....)
-    emit("countIncr")
+  let num = ref(100)
+  function childrenIncr() {
+    num.value++
   }
-
+  //暴露子组件中的属性
+  defineExpose({
+    num
+  })
 </script>
